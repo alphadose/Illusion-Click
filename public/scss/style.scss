@@ -1,0 +1,100 @@
+@import "compass/css3";
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Fauna+One);
+
+body {
+  background:#14685b;
+  font-family: 'Fauna One', serif;
+  overflow:hidden;
+  
+}
+
+h1 {
+  color:#fff;
+  text-align:center;
+  display:none;
+  background:#1FA892;
+  padding:15px;
+  border-radius:35px;
+  width:60%;
+  margin:200px auto;
+}
+
+i {
+  font-size:100em;
+  position:absolute;
+  transition:all 60s ease;
+  color:#2fab94;
+  z-index:2;
+  opacity:0;
+  //text-shadow:0px 2px 12px rgba(255, 255, 255, 0.2);
+ &.a {
+    left:0px;
+    top:0px;
+  }
+  &.b {
+    right:0px;
+    top:0px;
+  }
+  &.c {
+    left:0px;
+    bottom:0px;
+  }
+  &.d {
+    right:0px;
+    bottom:0px;
+  }
+  &.alt {
+    font-size:42em;
+    color:#1da188;
+    z-index:1;
+    &.a,&.b {
+      top:50%;
+    }
+    &.c,&.d {
+      bottom:50%;
+    }
+  }
+  &.rotate {
+    -webkit-transform:rotate(-10deg);
+    transform:rotate(-10deg);
+  }
+}
+
+.flip-a {
+  width:100%;
+  height:auto;
+  transition:all 60s ease;
+  -webkit-transform:rotate(-90deg);
+  transform:rotate(-90deg);
+  i {
+    color:#146054;
+  }
+}
+
+.flip-b {
+  width:100%;
+  height:auto;
+  transition:all 60s ease;
+  -webkit-transform:rotate(220deg);
+  transform:rotate(220deg);
+  i {
+    color:#0a6254;
+    font-size:12em !important;
+  }
+}
+
+.grow {
+    transform:scaleY(1.5);
+    -webkit-transform:scaleY(1.5);
+  }
+
+.shrink {
+    transform:scaleY(-1.5);
+    -webkit-transform:scaleY(-1.5);
+  }
+
+div[role="main"]{
+  z-index:100;
+}

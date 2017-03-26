@@ -1,8 +1,7 @@
 <?php
 
-	namespace Controllers ;
-	use Models\Login ;
-
+	namespace Controllers;
+    use Models\SignUp ;
 	class LoginController
 	{
 		protected $twig ;
@@ -17,49 +16,26 @@
 
 		public function post()
 		{
+			
+			
 			session_start() ;
-
-			if(isset($_SESSION['status']) && $_SESSION['status']==1)
-			{
-				header('Location: /posts') ;
-			}
-			else
-			{
-				if(!isset($_POST['username']) || !isset($_POST['password']))
+            $_SESSION['status']=1;
+            $username=$_POST['username'];
+            $score=0;
+            $result = SignUp::checkUser($username, $score) ;
+				if($_POST['username']=="" )
 				{
-					$this->twig->render("login.html", array(
-						"title"=>"Login",
-						"error" => "Please fill up all fields"
+					echo $this->twig->render("Homepage.html", array(
+						"title"=>"Homepage",
+						"error" => "Please fill your name"
 						)) ;
 				}
-				else
-				{
+		             else
+			         {
 					$username=$_POST['username'] ;
 					$_SESSION['username']=$username;
-					$password=$_POST['password'] ;
-					$error="" ;
-					$result=Login::authenticate($username,$password) ;
-					if($result==0)
-					{
-						header('Location: /posts') ;
-					}
-					else if($result==1)
-					{
-						$error = "Invalid username.." ;
-					}
-					else if($result==2)
-					{
-						$error = "Incorrect password.." ;
-					}
-					if($error!="")
-					{
-						echo $this->twig->render("login.html" , array(
-							"title"=>"Login",
-							"error"=>$error
-							)) ;
-					}
+					header('Location: /game_start') ;
 				}
-			}
 		}
 	}
 ?>

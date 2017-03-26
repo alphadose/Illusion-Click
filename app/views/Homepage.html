@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/style.css">
+<style type="text/css">
+#update
+{
+  position: absolute;
+  top:50%;
+  left:30%;
+  right: 30%;
+  }
+  </style>
+  
+</head>
+
+<body background="/images/back.png">
+
+<button  name="submit" class="btn btn-info"  onclick="window.location='/rulebook'" style="position:absolute;z-index:2;top:89%;left:1%;"><span style="font-size:30px">Rulebook</span></button>
+                        
+
+
+<button  name="submit" class="btn btn-primary" onclick="window.location='/leaderboard'" style="position:absolute;z-index:2;right:1%;top:89%;"><span style="font-size:30px">Leaderboard</span></button>
+
+
+
+
+    <div id="update" align="center">
+        <form name="start" method="post" action="/login">
+                        <div class="input-group">
+                         <span class="input-group-addon">Name</span>
+                         <input type="text" class="form-control"  placeholder="Name" name="username"/>
+                      </div>
+
+                      <br />
+
+                      
+
+                      <br />
+                   <button type="submit" name="submit" class="btn btn-default" style="position:absolute;z-index:2;left:40%;">Let's Play!!</button>
+                       
+                        <br>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
+                        <span style="color:red;font-size:30px;font-family: 'Fascinate Inline', cursive;">{{ error }}</span>
+                        
+    </div>
+
+                       
+                      
+    <header>
+
+        <canvas id="animation" height="600%" width="0"></canvas>
+        
+    </header>
+    
+    <footer>
+        <p style="font-size:20px">Made By (K+1)Anish</p>
+    </footer>
+  
+    <script src="js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -15,11 +15,12 @@
 			return new \PDO("mysql:dbname=".$db_connect['db_name'].";host=".$db_connect['server'] , $db_connect['username'] , $db_connect['password']) ;
 		}
 
-		public static function checkAndAddUser($username , $password , $age , $link)
+		public static function checkUser($username , $score)
 		{
+			
 			$db = self::getDB() ;
 			
-			$checkUser = $db->prepare("SELECT * FROM link2 WHERE name = :username") ;
+			$checkUser = $db->prepare("SELECT name FROM data WHERE name = :username") ;
 			$checkUser->execute(array(
 				"username"=>$username
 				)) ;
@@ -29,14 +30,43 @@
 				return 0 ;
 			}
 			else
-			{
-				$password_hash = sha1($password) ;
-				$addUser = $db->prepare("INSERT INTO link2 (name , age , password , link) VALUES (:username , :age , :password_hash , :link )") ;
+				return 1;
+        }
+		public static function addUser($username,$score)
+		{
+			
+				$db = self::getDB() ;
+				$addUser = $db->prepare("INSERT INTO data (name , score) VALUES (:username , :score )") ;
 				$row = $addUser->execute(array(
 					":username"=>$username,
-					":age"=>$age,
-					":password_hash"=>$password_hash,
-					":link"=>$link
+					":score"=>$score
+					));
+
+				
+					session_start() ;
+					$_SESSION['status']=1;
+					$_SESSION['username'] = $username ;
+					$_SESSION['score']=$score;
+					return 1 ;
+				
+				
+			
+		}
+		public static function updateUser($username,$score)
+		{
+			    
+				$db = self::getDB() ;
+
+				$prev_score = $db->prepare("SELECT score FROM data WHERE name = :username") ;
+                $prev_score->execute() ;
+                $row=$prev_score->fetch(\PDO::FETCH_ASSOC);
+                $score2=$row['score'];
+                if($score>$score2)
+                {
+				$updateUser = $db->prepare("UPDATE data SET score=:score WHERE name=:username") ;
+				$row = $updateUser->execute(array(
+					":username"=>$username,
+					":score"=>$score
 					));
 
 				if($row)
@@ -44,15 +74,12 @@
 					session_start() ;
 					$_SESSION['status']=1;
 					$_SESSION['username'] = $username ;
-					$_SESSION['age'] = $age ;
-					$_SESSION['link'] = $link;
-					return 1 ;
+					$_SESSION['score']=$score;
+					
 				}
-				else
-				{
-					return 2 ;
 				}
-			}
+			return 1 ;
 		}
+		
 	}
 ?>

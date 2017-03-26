@@ -4,8 +4,8 @@ Toro::serve(array(
 	"/" => "Controllers\\HomeController",
 	"/login" => "Controllers\\LoginController",
 	"/signup" =>"Controllers\\SignUpController",
-	"/posts" =>"Controllers\\PostDisplayController",
-	"/logout"=>"Controllers\\LogoutController",
-	"/switch"=>"Controllers\\SwitchController"
+	"/game_start" =>"Controllers\\GameStartController",
+	"/rulebook"=>"Controllers\\RulebookController",
+	"/leaderboard"=>"Controllers\\LeaderboardController"
 	));
 ?>

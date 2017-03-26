@@ -3,7 +3,7 @@
 	namespace Controllers ;
 	use Models\Posts ;
 
-	class PostDisplayController
+	class GameStartController
 	{
 		protected $twig ;
 
@@ -16,22 +16,21 @@
 		public function get()
 		{
 			session_start() ;
-			if(isset($_SESSION['status']) && $_SESSION['status']=="1")
+
+			if(isset($_SESSION['status']))
 			{
 				$username = $_SESSION['username'] ;
-				$all_posts = "";
-				$all_posts = Posts::displayAllPosts($username) ;
 				
-				echo $this->twig->render("links.html", array(
-					"user" => $username,
-					"title" => "Your link",
-					"link"=>$all_posts)) ;
+				echo $this->twig->render("icgame.php", array("title"=>"Game Start !!","name"=>$username
+						)) ;
 			}
+				
+			
 			else
 			{
-				echo $this->twig->render("login.html" , array(
+				echo $this->twig->render("Homepage.html" , array(
 					"error" => "Please login to Continue" ,
-					"title" => "Login"
+					"title" => "Homepage"
 					)) ;
 			}
 		}

@@ -3369,7 +3369,7 @@ fieldset[disabled] .btn-warning.focus {
 .open > .dropdown-toggle.btn-danger:hover,
 .btn-danger:active:focus,
 .btn-danger.active:focus,
-.open > .-toggle.btn-danger:focus,
+.open > .dropdown-toggle.btn-danger:focus,
 .btn-danger:active.focus,
 .btn-danger.active.focus,
 .open > .dropdown-toggle.btn-danger.focus {
@@ -3527,10 +3527,10 @@ tbody.collapse.in {
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 20px;
+  font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color:#373747;
+  background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #ccc;
@@ -4016,8 +4016,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border: 1px solid transparent;
-  border-radius: 4px 4px 4px 4px;
+  border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
   float: left;
@@ -4026,26 +4025,24 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li > a {
   margin-right: 2px;
   line-height: 1.42857143;
-  
-  border-radius: 4px 4px 4px 4px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #337ab7;
-  animation:bounceIn 1.5s ;
+  border-color: #eee #eee #ddd;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #fff;
+  color: #555;
   cursor: default;
-  background-color: #337ab7;
-  
-
-  
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
 }
 .nav-tabs.nav-justified {
   width: 100%;
-  
+  border-bottom: 0;
 }
 .nav-tabs.nav-justified > li {
   float: none;
@@ -4074,25 +4071,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
 .nav-tabs.nav-justified > .active > a:focus {
-  
+  border: 1px solid #ddd;
 }
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
-   
-    border-radius: 4px 4px 4px 4px;
-  }
-  .nav-tabs.nav-justified  > a,
-  .nav-tabs.nav-justified  > a:hover,
-  .nav-tabs.nav-justified  > a:focus {
-    animation:loader 1s infinite;
-    animation:bounceIn 1.5s ;
-    
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
   }
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    animation:bounceIn 1.5s ;
-    
+    border-bottom-color: #fff;
   }
 }
 .nav-pills > li {
@@ -4104,63 +4093,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li + li {
   margin-left: 2px;
 }
-@keyframes loader {
-    0% {
-      transform: translateX(0px);
-        
-    }
-    30% {
-        transform: translateX(50px);
-    }
-    70% {
-        
-        transform: scaleX(1);
-        transform: translateX(-50px);
-        
-    }
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(1.0);
-    opacity: 1;
-  }
-  
-  20% {
-    transform: scale(1.6);
-    opacity: 1;
-  }
-  
-  
-  60%
-  {
-    transform:scale(0.3);
-  }
-  
- 
-  100% {
-    transform: scale(1);
-  }
-}
-.nav-pills > li.active > a
-{
-color: #fff;
-  background-color: #337ab7;
-}
-
-
-.nav-pills > li> a:hover
-{
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #337ab7;
-  animation:bounceIn 1.5s infinite;
 }
-.nav-pills > li > a:focus {
-  color: #fff;
-  background-color: #337ab7;
-  animation:bounceIn 1.5s infinite;
-}
-
 .nav-stacked > li {
   float: none;
 }

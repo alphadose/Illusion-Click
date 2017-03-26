@@ -2,7 +2,7 @@
 
 	namespace Controllers ;
 
-	class LogoutController
+	class RulebookController
 	{
 		protected $twig ;
 
@@ -12,12 +12,13 @@
 			$this->twig = new \Twig_Environment($loader) ;
 		}
 
-		public function post()
+		public function get()
 		{
-			session_start();
-			session_unset();
-			session_destroy();
-			header('Location: /');
+			
+			echo $this->twig->render("rulebook.html" , array(
+					"title" => "Rulebook"
+					)) ;
+
 		}
 
 	}

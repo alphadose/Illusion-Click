@@ -1,7 +1,7 @@
 <?php
 
 	namespace Controllers;
-
+    
 	class HomeController
 	{
 
@@ -15,16 +15,23 @@
 
 		public function get()
 		{
-			session_start() ;
-			if(isset($_SESSION['status']) && $_SESSION['status']==1)
-			{
-				header('Location: /posts') ;
-			}
-			else
-			{
-				echo $this->twig->render("login.html", array(
-					"title" => "Login")) ;
-			}
+			session_start();
+			session_unset();
+			session_destroy();
+			session_start();
+			echo $this->twig->render("Homepage.html", array(
+					"title" => "Homepage")) ;
+			
+		}
+		public function post()
+		{
+			session_start();
+			session_unset();
+			session_destroy();
+			session_start();
+			echo $this->twig->render("Homepage.html", array(
+					"title" => "Homepage")) ;
+			
 		}
 	}
 ?>

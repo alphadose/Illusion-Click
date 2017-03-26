@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css'>
+
+      <link rel="stylesheet" href="/css/style2.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+
+  <div id="large-header" class="large-header">
+
+  <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title">
+      <script type="text/javascript">i=1;</script>
+    <table>
+      <tr>
+        <th>Rank</th>
+
+        <th>&nbsp Name</th>
+        <th>Score</th>
+      </tr>
+      {% for post in all_posts %}
+      <script type="text/javascript">if(i==10){}</script>
+    <tr>
+      <td><script>document.write((i++)+". ")</script></td>
+      <td>{{ post.name }}</td>
+      <td>{{ post.score }}</td>
+    </tr>
+     {% endfor %}
+     <tr><td><br></td></tr>
+     <tr>
+      <td></td>
+      <td><form method="post" action="/">
+  <button type="submit" name="submit" class="btn btn-success" >Back To Home</button>
+</form>
+</td>
+     </tr>
+    </table> 
+    <br>
+  </h1>
+    
+    
+</div>
+  <script src='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+<script src='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+<script src='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+
+    <script src="/js/index2.js"></script>
+
+</body>
+</html>
