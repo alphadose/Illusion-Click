@@ -1,7 +1,7 @@
 var i=0;
 var timer;
 var inter;
-var time=5;
+var time=3;
 var z=0;
 var check;
 var t;
@@ -10,7 +10,8 @@ var score;
 function start(){
 
     var n=confirm("Do you want to start the game ?");
-    if(n==true){
+    if(n==true)
+    {
 	var x=Math.floor(17.99*Math.random());
      var y=Math.floor(13.99*Math.random());
  	x=5.75 + 4.5*x;
@@ -22,12 +23,16 @@ function start(){
     else
         t=2;
 
-    timer=setTimeout(red,4950);
-    inter=setTimeout(gameover,5010);
+    timer=setTimeout(red,2950);
+    inter=setTimeout(gameover,3010);
      $("#image").attr("src","/images/"+z+".jpg");
     $('#image').css({ position:'absolute','left': x + '%', 'top': y + '%' ,'width':1+"%" , 'height':1.6+"%"});
     changetimer(time);
     zzz=setInterval(changetimer,1000);
+    }
+    else
+    {
+        window.location="/";
     }
 }
 
@@ -38,7 +43,16 @@ $("#image").ready(function(){
               $("#image").mousedown(function(e){ 
                 
             if( e.button == t ) {
-                time=5;
+                
+                //if(i<5)
+                //time=5;
+                //else if(i>=5 && i<25)
+                //time=4;
+                //else if(i>=25 && i<50)
+                time=3;
+                //else
+                //time=2;
+
     clearInterval(zzz);        
     clearTimeout(inter);
     clearTimeout(timer);
@@ -54,8 +68,8 @@ $("#image").ready(function(){
     else
         t=2;
     zzz=setInterval(changetimer,1000);
-    timer=setTimeout(red,4950);
-    inter=setTimeout(gameover,5010);
+    timer=setTimeout(red,time*1000 - 50);
+    inter=setTimeout(gameover,time*1000 + 10);
      $("#image").attr("src","/images/"+z+".jpg"); 
     $('#image').css({ position:'absolute','left': x + '%', 'top': y + '%' ,'width':1+"%" , 'height':1.6+"%"});
    
@@ -94,7 +108,8 @@ function changetimer()
 {   if(time>=0)
     {
     document.getElementById('time').innerHTML= time;
-    time--;}
+    time--;
+}
     else
      {   clearInterval(zzz);
 
