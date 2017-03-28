@@ -1,0 +1,11 @@
+#rules
+{
+  font-family: 'Lobster', cursive;
+  position:absolute;
+  top:15%;
+  left:25%;
+  text-align: center;
+  font-size: 30px;
+  color:#CD5555;
+  z-index: 5;
+}

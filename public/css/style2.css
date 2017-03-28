@@ -1,13 +1,25 @@
 /* Header */
 .large-header {
   position: absolute;
+ top:0%;
   width: 100%;
+  height:100%;
   background: #333;
-  overflow: hidden;
+  overflow-x:hidden;
+  overflow-y: hidden;
   background-size: cover;
   background-position: center center;
   z-index: 1;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+@media only screen and (max-width: 100%) {
+  .demo-1 .main-title {
+    font-size: 3em;
+  }
+}
+
 #large-header {
   background-image: url("http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
 }
@@ -30,9 +42,5 @@
 .main-title .thin {
   font-weight: 200;
 }
-@media only screen and (max-width: 768px) {
-  .demo-1 .main-title {
-    font-size: 3em;
-  }
-}
+
 

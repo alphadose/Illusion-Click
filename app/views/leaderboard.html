@@ -12,26 +12,28 @@
 
   <link rel="stylesheet" href="/css/bootstrap.css">
 </head>
-
 <body>
 
   <div id="large-header" class="large-header">
-
-  <canvas id="demo-canvas"></canvas>
+<canvas id="demo-canvas" height="100%" ></canvas>
     <h1 class="main-title">
       <script type="text/javascript">i=1;</script>
     <table>
+      
       <tr>
-        <th>Rank</th>
-
-        <th>&nbsp Name</th>
+        <th>Rank &nbsp</th>
+                <th>Name</th>
+                <td>&nbsp</td>
+                        <td>&nbsp</td>
         <th>Score</th>
       </tr>
       {% for post in all_posts %}
-      <script type="text/javascript">if(i==10){}</script>
     <tr>
-      <td><script>document.write((i++)+". ")</script></td>
+      <td><script>document.write((i++)+".")</script></td>
+             
       <td>{{ post.name }}</td>
+              <td>&nbsp</td>
+                      <td>&nbsp</td>
       <td>{{ post.score }}</td>
     </tr>
      {% endfor %}
@@ -43,6 +45,7 @@
 </form>
 </td>
      </tr>
+   
     </table> 
     <br>
   </h1>
@@ -53,7 +56,9 @@
 <script src='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
 <script src='http://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
 
-    <script src="/js/index2.js"></script>
+<script src="/js/index4.js"></script>
+    
+ 
 
 </body>
 </html>
