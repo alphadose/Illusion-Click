@@ -1,0 +1,32 @@
+<VirtualHost *:80>
+	ServerAdmin contact@sdslabs.co.in
+        ServerName alpha.mvc.dev
+#Change the path below to wherever your application's public folder is in your system
+	DocumentRoot /home/alphadose/Desktop/MVC_PROJECT/public
+#Change the path below too	
+	<Directory /home/alphadose/Desktop/MVC_PROJECT/public>
+		#Do not show indexes
+		#Do not follow symlinks
+		Options -Indexes -MultiViews
+		#Order allow,deny
+		Require all granted
+    Allowoverride All
+		<IfModule mod_rewrite.c>
+			RewriteEngine on
+			RewriteCond %{REQUEST_FILENAME} !-f
+			RewriteCond %{REQUEST_FILENAME} !-d
+			RewriteCond $1 !^(index\.php)
+			RewriteRule ^(.*)$ index.php/$1 [L]
+		</IfModule>
+
+	</Directory>
+
+	ErrorLog /var/log/httpd/log.error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/httpd/blog.access.log combined
+
+</VirtualHost>
