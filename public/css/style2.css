@@ -3,7 +3,7 @@
   position: absolute;
   width: 100%;
   background: #333;
-  overflow-y: scroll;
+  overflow-y: visible;
   overflow-x:hidden;
   background-size: cover;
   background-position: center center;
