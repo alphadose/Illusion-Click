@@ -12,7 +12,7 @@
         height = window.innerHeight;
         target = {x: width, y: height}
         largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height*1.3+'px';
+        largeHeader.style.height = height*1.8+'px';
         
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
