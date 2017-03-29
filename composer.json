@@ -1,6 +1,6 @@
 {
-	"name":"MVC Assignment",
-	"description":"Link Saving App",
+	"name":"Illusion-Click",
+	"description":"An optical illusion based game",
 	"require":{
 		"torophp/torophp":	"dev-master",
 		"twig/twig":"2.0"
