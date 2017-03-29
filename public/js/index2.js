@@ -16,7 +16,7 @@
         
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
-        canvas.height = height*1.2;
+        canvas.height = height*1.1;
         ctx = canvas.getContext('2d');
 
         // create points
