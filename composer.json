@@ -3,7 +3,8 @@
 	"description":"An optical illusion based game",
 	"require":{
 		"torophp/torophp":	"dev-master",
-		"twig/twig":"2.0"
+		"twig/twig":"2.0",
+		"herrera-io/silex-pdo": "^1.2"
 	},
 	"require-dev":{
 
@@ -15,4 +16,3 @@
 		}
 	}	
 }
- 
