@@ -13,11 +13,12 @@
         target = {x: width, y: height};
 
         largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = 768*i/12+'px';
+        largeHeader.style.height = height*i/8+'px';
+        largeHeader.style.width = width+'px';
 
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
-        canvas.height = height;
+        canvas.height = height*i/8;
         ctx = canvas.getContext('2d');
 
         // create points
