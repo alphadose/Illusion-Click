@@ -8,12 +8,13 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="/css/ic.css" rel="stylesheet" type="text/css">
+
 <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Fascinate+Inline" rel="stylesheet">
+<link href="/css/ic2.css" rel="stylesheet" type="text/css">
 </head>
 
 <body bg-color="black" onload="start();">
@@ -79,7 +80,7 @@ session_start();
 	<p id="score"></p>
 	<br>
 	Timer:
-	<p id="time"></p>
+	<p id="time" class="fb" style="position:absolute;right:30%;"></p>
 
 </div>
 <img src="/images/1.jpg" height="1.6%" width="1%"  id="image" >
