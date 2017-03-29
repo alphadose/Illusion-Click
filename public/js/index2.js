@@ -10,15 +10,14 @@
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
-        target = {x: width, y: height};
-        i=Math,round(i/10);
+        target = {x: width, y: height}
         largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height*i+'px';
+        largeHeader.style.height = 1366+'px';
         largeHeader.style.width = width+'px';
         
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
-        canvas.height = height*i;
+        canvas.height = 1366;
         ctx = canvas.getContext('2d');
 
         // create points
