@@ -3,7 +3,7 @@
   position: absolute;
   width: 100%;
   background: #333;
-  overflow: hidden;
+  overflow: scroll;
   background-size: cover;
   background-position: center center;
   z-index: 1;
