@@ -57,11 +57,17 @@
 			    
 				$db = self::getDB() ;
 
-				$prev_score = $db->prepare("SELECT score FROM data WHERE name = :username") ;
+				$prev_score = $db->prepare("SELECT * FROM data WHERE name = :username") ;
                 $prev_score->execute() ;
-                $row=$prev_score->fetch(\PDO::FETCH_ASSOC);
-                $score2=$row['score'];
-                if($score>$score2)
+                $prev_score->setFetchMode(\PDO::FETCH_ASSOC);
+                $score2=0;
+                $row=0;
+                while($row=$prev_score->fetch())
+                {
+                	$score2=$row['score'];
+             }
+
+               if($score>$score2)
                 {
 				$updateUser = $db->prepare("UPDATE data SET score=:score WHERE name=:username") ;
 				$row = $updateUser->execute(array(

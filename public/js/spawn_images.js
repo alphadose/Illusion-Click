@@ -79,8 +79,8 @@ $("#image").ready(function(){
         t=0;
     else
         t=2;
-    alpha= (time+1)*1000 - 50;
-    beta= (time+1)*1000 + 30 ;
+    alpha= (time+1)*1000 - 150;
+    beta= (time+1)*1000 + 130 ;
     
     timer=setTimeout(red,alpha);
     inter=setTimeout(gameover,beta);
