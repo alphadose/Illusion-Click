@@ -6,12 +6,12 @@
 RewriteEngine On
 
 # Redirect Trailing Slashes...
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+
 
 # Handle Front Controller...
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|images|robots\.txt|css)
-RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^(.*)$ public/index.php/$1 [L]
 </IfModule>
 

@@ -14,7 +14,7 @@
 
 		public function get()
 		{
-			echo "hi";
+			
 			echo $this->twig->render("rulebook.html" , array(
 					"title" => "Rulebook"
 					)) ;
