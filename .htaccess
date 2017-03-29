@@ -4,14 +4,11 @@
 </IfModule>
 
 RewriteEngine On
+RewriteBase /
 
-# Redirect Trailing Slashes...
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
 
-
-# Handle Front Controller...
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond $1 !^(index\.php|images|robots\.txt|css)
-RewriteRule ^(.*)$ /public/index.php/$1 [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
 </IfModule>
 
